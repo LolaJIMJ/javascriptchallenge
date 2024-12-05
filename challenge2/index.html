@@ -7,35 +7,45 @@
 </head>
 <body>
     <h2>Student Grade Calculator</h2>
-    <script>
-      
-      var marks = prompt("Enter your marks:");
-  
-      
-      marks = parseInt(marks);
-  
-     
-      var grade;
-  
-      //  if/else statements
-      if (marks >= 70 && marks <= 100) {
-        grade = "A";
-      } else if (marks >= 50 && marks <= 60) {
-        grade = "C";
-      } else if (marks >= 0 && marks <= 40) {
-        grade = "F";
-      } else {
-        grade = "Invalid input";
-      }
-  
-     
-      if (grade !== "Invalid input") {
-        document.write("<h3>Your grade is: " + grade + "</h3>");
-        alert("Your grade is: " + grade);
-      } else {
-        document.write("<h3>" + grade + "</h3>");
-        alert(grade);
-      }
-      </script>
+   
+
+
+
+<script>
+  // Prompt the user to enter their marks
+  var input = prompt("Enter your marks:");
+
+  //  input to a number
+  var marks = parseFloat(input);
+
+  // Function to validate input and calculate grade
+  function calculateGrade(marks) {
+    if (isNaN(marks)) {
+      alert("Error: Please enter a valid number.");
+      document.write("<h3>Error: Invalid input. Please try again.</h3>");
+   
+    } else if (marks < 0 || marks > 100) {
+      alert("Error: Marks should be between 0 and 100.");
+      document.write("<h3>Error: Marks out of range. Please try again.</h3>");
+   
+    } else if (marks >= 70 && marks <= 100) {
+      alert("Your grade is: A");
+      document.write("<h3>Your grade is: A</h3>");
+    } else if (marks >= 50 && marks <= 60) {
+      alert("Your grade is: C");
+   
+      document.write("<h3>Your grade is: C</h3>");
+    } else if (marks >= 0 && marks <= 40) {
+      alert("Your grade is: F");
+      document.write("<h3>Your grade is: F</h3>");
+    
+    } else {
+      alert("Your marks do not fit any grading criteria.");
+    }
+  }
+
+  // Called the function to calculate grade
+  calculateGrade(marks);
+</script>
 </body>
 </html>
